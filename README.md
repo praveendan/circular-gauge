@@ -1,37 +1,54 @@
-## Welcome to GitHub Pages
+### Circular gauge
+Circular gauge is a JQuery and css based lightweight component for visualizing data on dashboards.
 
-You can use the [editor on GitHub](https://github.com/praveendan/circular-gauge/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+### API and Options
+CircularGauge can be instantiated via plugin facade.
+```javascript
+        // Create a Div tag with class name c-gauge
+        <div id="example_ID" class="c-gauge"></div>
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+        // Initialize the Gauge
+        $("#example_ID").circularGauge()
 
-### Markdown
+        // Or instantiate with options
+        $("#example_ID").circularGauge(options)
+```
+### Default Options
+The default options are listed below. you can specify the values when you instantiate the gauge
+```javascript
+        min: 0,
+        max: 100,
+        size: "200px",
+        speed: "1000",
+        fillColor: "#307bbb",
+        hoverTextColor: "#307bbb",
+        gaugeColor: "#cccccc",
+        units: "",
+        isInvert: false,
+        responsive: false,
+```
+### Functions
+The you can change the appearence/behaviour after instatiation. The list of functions are given below along with the funcion parameter type
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```javascript
+        setMin(value) // number
+        setMax(value) // number
+        setSize(value) // px value ex: 200px
+        setSpeed(value) // a number in milliseconds ex: 500
+        setColor(value) // a color ex: "red" or "#FF0000"
+        setBackGroundColor(value) // a color ex: "red" or "#FF0000"
+        setTextColor(value) // a color ex: "red" or "#FF0000"
+        setValue(value) // number
+        
+        // exmaple usage
+        var a  = $("#example_ID").circularGauge()
+        a.gauge.setBackGroundColor("yellow");
+        a.gauge.setSize("200px");
+        a.gauge.setSpeed("500");
+        a.gauge.setColor("blue");
+        a.gauge.setTextColor("green");
+        a.gauge.setMax(200);
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/praveendan/circular-gauge/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+### Installation
+Simply Load either the minified or unminified JS and CSS files to your project and you are good to go.!
